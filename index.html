@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Clicking of the Ancients</title>
+</head>
+<body>
+	<div class="wrap">
+		<!-- Main -->
+		<div class="row">
+			<!-- Action panel -->
+			<div class="col-md-4" ng-controller="ActionPanelCtrl">
+				Gold: {{ playerData.gold }}<br>
+				Last hits: {{ playerData.lastHits }}
+			</div>
+			<!-- /Action panel -->
+
+			<!-- Page -->
+			<div class="col-md-8">
+				<div class="menu">
+					
+				</div>
+
+				<div class="page" ng-view></div>
+			</div>
+			<!-- /Page -->
+		</div>
+		<!-- /Main -->
+
+		<!-- Footer -->
+		<div class="row">
+			
+		</div>
+		<!-- /Footer -->
+	</div>
+
+	<script src="js/external.min.js"></script>
+	<script src="js/cota.min.js"></script>
+</body>
+</html>

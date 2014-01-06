@@ -32,12 +32,20 @@ module.exports = function (grunt) {
                         src: [
                             'components/jquery/jquery.min.js',
                             'components/angular/angular.js',
+                            'components/angular/angular-route.js',
                             'js/ext/**/*.js'
                         ],
                         dest: 'js/final/external.js'
                     },
                     {
-                        src: ['js/compiled/**/*.js'],
+                        src: [
+                            'js/compiled/init.js',
+                            'js/compiled/upgrades/**/*.js',
+                            'js/compiled/services/**/*.js',
+                            'js/compiled/controllers/**/*.js',
+                            'js/compiled/routes.js',
+                            'js/compiled/app.js'
+                        ],
                         dest: 'js/final/cota.js'
                     }
                 ]
@@ -97,7 +105,7 @@ module.exports = function (grunt) {
                     environment: 'production'
                 }
             },
-            
+
             dist: {
                 options: {
                     sassDir: 'scss',

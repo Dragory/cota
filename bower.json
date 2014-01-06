@@ -1,7 +1,8 @@
 {
-	"name": "mivir-cota",
-	"dependencies": {
-		"angular": "angular#1.2.7",
-		"jquery": "jquery#1.10.2"
-	}
+  "name": "mivir-cota",
+  "dependencies": {
+    "angular": "angular#1.2.7",
+    "jquery": "jquery#1.10.2",
+    "angular-route": "~1.2.7"
+  }
 }
