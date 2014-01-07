@@ -1,0 +1,16 @@
+.header {
+	background-color: #4F5A63;
+	@include background-image(linear-gradient(top, rgba(0, 0, 0, 0.5), transparent));
+
+	overflow: hidden; // Prevent margin collapse
+	margin: 0 0 1em;
+	
+	box-shadow: 0 0.3em 0.7em rgba(0, 0, 0, 0.5);
+	border-bottom: 1px solid #919191;
+
+	h1 {
+		text-align: center;
+		font-family: Quando;
+		color: #E6E4DE;
+	}
+}

@@ -9,7 +9,7 @@ angular.module('cota').config [
 	($routeProvider,   $locationProvider) ->
 		$routeProvider.when '/messages', {
 			templateUrl: './templates/messages.html'
-			controller: 'MessagesPageCtrl'
+			controller: 'messagesCtrl'
 		}
 
 		$routeProvider.otherwise {

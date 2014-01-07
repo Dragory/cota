@@ -1,21 +1,15 @@
+# Initialize angular module
+angular.module('cota', ['ngRoute']);
+
 # Initialize game data
 window.cota =
 	player:
 		hero: null
-		level: 0
+		level: 1
 
-		attributes:
-			strength: 0
-			strengthGain: 0
-
-			agility: 0
-			agilityGain: 0
-
-			intelligence: 0
-			intelligenceGain: 0
-
-		maxHealth: 0
-		health: 0
+		maxHealth: 640
+		maxHealthGain: 50
+		health: 640
 		respawnTime: 0
 		buybackDisabledUntil: 0
 
@@ -24,7 +18,7 @@ window.cota =
 		kills: 0
 		deaths: 0
 		lastHitAttempts: 0
-		lastHitChance: 0
+		lastHitChance: 0.25
 		lastHits: 0
 		gold: 0
 

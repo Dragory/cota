@@ -32,13 +32,14 @@ module.exports = function (grunt) {
                         src: [
                             'components/jquery/jquery.min.js',
                             'components/angular/angular.js',
-                            'components/angular/angular-route.js',
+                            'components/angular-route/angular-route.js',
                             'js/ext/**/*.js'
                         ],
                         dest: 'js/final/external.js'
                     },
                     {
                         src: [
+                            'js/compiled/helpers.js',
                             'js/compiled/init.js',
                             'js/compiled/upgrades/**/*.js',
                             'js/compiled/services/**/*.js',

@@ -1,0 +1,71 @@
+// 
+// Typography
+// 
+
+$fontStack: 'Open Sans', 'Arial', sans-serif;
+$fontBodySize: 1.4em;
+
+$fontColorLight: #999;
+$fontColorDark: #222;
+$fontColorNegative: #F8F8F8;
+
+$fontColorLink: #3e7aac;
+
+$tableBgColor: #F8F8F8;
+$tableBorderColor: darken($tableBgColor, 15%);
+
+// Tabs
+$tabColor: #3e7aac;
+$tabActiveColor: lighten($tabColor, 20%);
+
+// 
+// Admin page specific
+// 
+$inputColor: #E7E7E7;
+
+// Details page
+$detailsBorder: 1px solid rgba(#000,0.1);
+$sectionHighlight: #3e7aac;
+
+// 
+// Grid and breakpoints
+// 
+
+$columnPadding: 15px;
+
+$bpSmall: 768px;
+$bpSmallContainer: $bpSmall - 18px;
+
+$bpMedium: 992px;
+$bpMediumContainer: $bpMedium - 22px;
+
+$bpLarge: 1200px;
+$bpLargeContainer: $bpLarge - 30px;
+
+// 
+// Paperstack shadowstack (((:
+// 
+%smallShadowStack {
+	@include box-shadow(
+		1px   1px 0 rgba(  0,  0,  0, 0.075),
+		3px   3px 0 rgba(255,255,255, 1.000),
+		4px   4px 0 rgba(  0,  0,  0, 0.100),
+		6px   6px 0 rgba(255,255,255, 1.000),
+		7px   7px 0 rgba(  0,  0,  0, 0.125),
+		9px   9px 0 rgba(255,255,255, 1.000)
+	);
+}
+%largeShadowStack {
+	@include box-shadow(
+		1px   1px 0 rgba(  0,  0,  0, 0.075),
+		3px   3px 0 rgba(255,255,255, 1.000),
+		4px   4px 0 rgba(  0,  0,  0, 0.100),
+		6px   6px 0 rgba(255,255,255, 1.000),
+		7px   7px 0 rgba(  0,  0,  0, 0.125),
+		9px   9px 0 rgba(255,255,255, 1.000),
+		10px 10px 0 rgba(  0,  0,  0, 0.150),
+		12px 12px 0 rgba(255,255,255, 1.000),
+		13px 13px 0 rgba(  0,  0,  0, 0.175),
+		15px 15px 0 rgba(255,255,255, 1.000)
+	);
+}

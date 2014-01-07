@@ -22,4 +22,8 @@ angular.module('cota').factory 'ganker', [
 			damage = Math.floor(Math.random() * (damageMax - damageMin) + damageMin)
 
 			return _success(damage)
+
+		return {
+			attemptEnemyGank: attemptEnemyGank
+		}
 ]

@@ -1,0 +1,115 @@
+//
+// Grid system
+// --------------------------------------------------
+
+$gridGutterWidth: 30px;
+$columns: 12;
+$containerMinWidth: 100px;
+
+// A container for columns.
+.row {
+  margin-left:  -1 * ($gridGutterWidth/2);
+  margin-right: -1 * ($gridGutterWidth/2);
+
+  @include clearfix;
+}
+
+// A column that also acts as a row
+.column-row {
+  @include clearfix;
+
+  // Specificity
+  html & {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// Creates grid classes for $name where this mixin is used,
+// e.g. inside a media query or outside one.
+@mixin gridSelectors($name, $breakpoint) {
+	// On a 12-column layout:
+	// col-name-1 ... col-name-11
+  @for $i from 1 through ($columns - 1) {
+    .col-#{$name}-#{$i} {
+      width: percentage($i/$columns);
+      float: left;
+    }
+    .col-#{$name}-push-#{$i} {
+      left: percentage($i/$columns);
+    }
+    .col-#{$name}-pull-#{$i} {
+      right: percentage($i/$columns);
+    }
+    .col-#{$name}-offset-#{$i} {
+      margin-left: percentage($i/$columns);
+    }
+  }
+
+	// col-name-12
+  .col-#{$name}-#{$columns} {
+    width: 100%;
+    float: left;
+  }
+}
+
+@mixin gridSelectorDefaults($name, $breakpoint) {
+  @for $i from 1 through $columns {
+    .col-#{$name}-#{$i} {
+      position: relative;
+      min-height: 1px;
+      padding-left: ($gridGutterWidth / 2);
+      padding-right: ($gridGutterWidth / 2);
+    }
+  }
+}
+
+@mixin createBreakpoint($name, $breakpoint) {
+	// The default breakpoint (mobile-first)
+  @if $breakpoint == 0 {
+    @include gridSelectors($name, $breakpoint);
+
+  // Other breakpoints
+  } @else {
+    @media (min-width: #{$breakpoint}px) {
+      .container {
+        max-width: #{max(($breakpoint - ($gridGutterWidth / 2)), $containerMinWidth)};
+      }
+
+      .visible-#{$name} {
+        display: block;
+      }
+
+      .hidden-#{$name} {
+        display: none;
+      }
+
+      @include gridSelectors($name, $breakpoint);
+    }
+  }
+
+  // Default styles for the breakpoint's grid classes
+  @include gridSelectorDefaults($name, $breakpoint);
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: ($gridGutterWidth/2);
+  padding-right: ($gridGutterWidth/2);
+
+  @include clearfix;
+}
+
+.start-hidden {
+  display: none;
+}
+
+@include createBreakpoint('tn', 0);
+@include createBreakpoint('xs', 480);
+@include createBreakpoint('sm', 768);
+@include createBreakpoint('md', 1024);
+@include createBreakpoint('lg', 1280);
+@include createBreakpoint('xl', 1440);
+@include createBreakpoint('xxl', 1550);
+@include createBreakpoint('xxxl', 1700);

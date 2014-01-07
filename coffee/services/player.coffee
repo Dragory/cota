@@ -92,7 +92,7 @@ angular.module('cota').factory 'player', [
 			data: player
 
 			states: states
-			checkState: checkState
+			getState: getState
 			dealDamage: dealDamage
 			heal: heal
 			die: die
@@ -101,6 +101,6 @@ angular.module('cota').factory 'player', [
 			addGold: addGold
 			takeGold: takeGold
 			addLastHitAttempt: addLastHitAttempt
-			addLastHits: addLastHits
+			addLastHit: addLastHit
 		}
 ]

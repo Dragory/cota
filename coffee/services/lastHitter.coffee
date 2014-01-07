@@ -12,8 +12,12 @@ angular.module('cota').factory 'lastHitter', [
 			if lastHitRoll > player.data.lastHitChance
 				return _fail()
 
-			creep = gameData.creeps[Math.floor(Math.random() * gameData.creeps.length)]
+			creep = gameData.creeps[window.helpers.randomProperty(gameData.creeps)]
 			goldGain = Math.floor(Math.random() * (creep.goldMax - creep.goldMin) + creep.goldMin)
 
 			return _success(goldGain)
+
+		return {
+			attempt: attempt
+		}
 ]

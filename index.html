@@ -3,38 +3,51 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Clicking of the Ancients</title>
+
+	<link rel="stylesheet" href="css/cota.css">
 </head>
 <body>
 	<div class="wrap">
+		<!-- Header -->
+		<div class="header">
+			<h1>Clicking of the Ancients</h1>
+		</div>
+		<!-- /Header -->
+
+		<!-- Menu -->
+		<div class="menu row">
+			<ul class="section">
+				<li><a href="#/messages">Messages</a></li>
+				<li><a href="#/shop">Item shop</a></li>
+				<li><a href="#/upgrades">Upgrades</a></li>
+			</ul>
+		</div>
+		<!-- /Menu -->
+
 		<!-- Main -->
-		<div class="row">
+		<div class="main row">
 			<!-- Action panel -->
-			<div class="col-md-4" ng-controller="ActionPanelCtrl">
-				Gold: {{ playerData.gold }}<br>
-				Last hits: {{ playerData.lastHits }}
+			<div class="col-md-3" ng-controller="actionPanelCtrl">
+				<div class="action-panel section" ng-include="template.url"></div>
 			</div>
 			<!-- /Action panel -->
 
 			<!-- Page -->
-			<div class="col-md-8">
-				<div class="menu">
-					
-				</div>
-
-				<div class="page" ng-view></div>
+			<div class="col-md-9">
+				<div class="page section" ng-view></div>
 			</div>
 			<!-- /Page -->
 		</div>
 		<!-- /Main -->
 
 		<!-- Footer -->
-		<div class="row">
+		<div class="footer row">
 			
 		</div>
 		<!-- /Footer -->
 	</div>
 
-	<script src="js/external.min.js"></script>
-	<script src="js/cota.min.js"></script>
+	<script src="js/final/external.min.js"></script>
+	<script src="js/final/cota.min.js"></script>
 </body>
 </html>

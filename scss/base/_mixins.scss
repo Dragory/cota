@@ -1,0 +1,110 @@
+// Clearfixinguu!
+@mixin clearfix {
+	&:before, &:after {content:" ";display:table;}
+	&:after {clear:both;}
+	& {*zoom: 1;}
+}
+@mixin clearbreak {
+	& {
+		clear: both;
+	}
+}
+
+// 
+// Animations
+// 
+/*! Thanks to https://github.com/ericam/compass-animation */
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+
+	@-o-keyframes #{$name} {
+		@content;
+	}
+
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+@mixin animation($value) {
+	-webkit-animation: #{$value};
+	-moz-animation: #{$value};
+	-ms-animation: #{$value};
+	-o-animation: #{$value};
+	animation: #{$value};
+}
+
+// 
+// Misc
+// 
+
+@mixin transition($settings) {
+	-webkit-transition: $settings;
+	-moz-transition: $settings;
+	-ms-transition: $settings;
+	-o-transition: $settings;
+	transition: $settings;
+}
+
+@mixin inline-block {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+}
+
+@mixin gradient {
+	background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.2) 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(100%, rgba(0, 0, 0, 0.2)));
+	background-image: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+	background-image: -o-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+	background-image: -ms-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+	background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+// 
+// Placeholders
+// 
+%no-select {
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+}
+%headerIncEm {
+	font: 600 1em $fontStack;
+	color: $fontColorDark;
+}
+%headerDecEm {
+	font: 600 0.925em $fontStack;
+	color: $fontColorLight;
+}
+%textLink {
+	text-decoration: none;
+	color: $fontColorLink;
+	margin: 0px -4px;
+	padding: 2px 4px;
+	display: inline-block;
+	
+	&:hover {
+		background-color: $fontColorLink;
+		color: #FFF;
+		text-decoration: none;
+		border-radius: 2px;
+		text-shadow: 1px -1px 0 rgba(0,0,0,0.15);
+	}
+}
+%hasTextLink {
+	a {
+		@extend %textLink;
+	}
+}

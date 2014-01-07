@@ -1,0 +1,5 @@
+<h1>Yay messages</h1>
+
+<div ng-repeat="message in messages">
+	<span ng-class="{success: message.type === 1, fail: message.type === 2}"></span>
+</div>

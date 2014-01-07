@@ -12,4 +12,8 @@ angular.module('cota').factory 'jungler', [
 				goldGain: goldGain
 				damage: damage
 			}
+
+		return {
+			attempt: attempt
+		}
 ]

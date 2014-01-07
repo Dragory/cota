@@ -1,0 +1,33 @@
+.menu {
+	text-align: center;
+
+	ul {
+		@include inline-block();
+		list-style: none;
+		padding: 0;
+	}
+
+	li {
+		display: inline-block;
+		margin: 0.8em;
+
+		border: 1px solid #660000;
+		border-radius: 0.2em;
+
+		background-color: #313131;
+		@include background-image(linear-gradient(top, rgba(255, 255, 255, 0.2), transparent));
+
+		box-shadow: 0 0 0.2em #000;
+		font-family: Quando, serif;
+
+		a {
+			display: block;
+			padding: 0.4em;
+			color: #EBD5C1;
+		}
+
+		&:hover {
+			background-color: #534242;
+		}
+	}
+}

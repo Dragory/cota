@@ -1,0 +1,29 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:100,400italic,400,600,700);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+@import url(http://fonts.googleapis.com/css?family=Quando);
+
+html {
+	font: normal 62.5%/1.4 $fontStack;
+}
+body {
+	font-size: $fontBodySize;
+	color: #ddd;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 600;
+}
+
+a {
+  color: #3e7aac;
+  text-decoration: none;
+
+  &:hover {
+    color: lighten(#3e7aac, 10%);
+  }
+}
