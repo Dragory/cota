@@ -14,15 +14,15 @@ module.exports = function (grunt) {
             dist: {
                 expand: true,
                 flatten: false,
-                cwd: 'coffee',
+                cwd: 'assets/coffee',
                 src: ['**/*.coffee'],
-                dest: 'js/compiled/',
+                dest: 'assets/_compiled/js/compiled/',
                 ext: '.js'
             }
         },
 
         clean: {
-            dist: ['js/compiled', 'js/final']
+            dist: ['assets/_compiled', 'public/css', 'public/js']
         },
 
         concat: {
@@ -30,24 +30,30 @@ module.exports = function (grunt) {
                 files: [
                     {
                         src: [
-                            'components/jquery/jquery.min.js',
-                            'components/angular/angular.js',
-                            'components/angular-route/angular-route.js',
-                            'js/ext/**/*.js'
+                            'assets/bower/jquery/jquery.min.js',
+                            'assets/bower/angular/angular.js',
+                            'assets/bower/angular-route/angular-route.js',
+                            'assets/js/ext/**/*.js'
                         ],
-                        dest: 'js/final/external.js'
+                        dest: 'assets/_compiled/js/final/external.js'
                     },
                     {
                         src: [
-                            'js/compiled/helpers.js',
-                            'js/compiled/init.js',
-                            'js/compiled/upgrades/**/*.js',
-                            'js/compiled/services/**/*.js',
-                            'js/compiled/controllers/**/*.js',
-                            'js/compiled/routes.js',
-                            'js/compiled/app.js'
+                            'assets/_compiled/js/compiled/helpers.js',
+
+                            'assets/_compiled/js/compiled/init.js',
+
+                            'assets/_compiled/js/compiled/upgrades/**/*.js',
+                            'assets/_compiled/js/compiled/actions/**/*.js',
+                            'assets/_compiled/js/compiled/items/**/*.js',
+
+                            'assets/_compiled/js/compiled/services/**/*.js',
+                            'assets/_compiled/js/compiled/controllers/**/*.js',
+
+                            'assets/_compiled/js/compiled/routes.js',
+                            'assets/_compiled/js/compiled/app.js'
                         ],
-                        dest: 'js/final/cota.js'
+                        dest: 'assets/_compiled/js/final/cota.js'
                     }
                 ]
             }
@@ -59,8 +65,8 @@ module.exports = function (grunt) {
             },
             dist: {
                 files: {
-                    "js/final/external.min.js": ["js/final/external.js"],
-                    "js/final/cota.min.js": ["js/final/cota.js"]
+                    "assets/_compiled/js/final/external.min.js": ["public/js/external.js"],
+                    "assets/_compiled/js/final/cota.min.js": ["public/js/cota.js"]
                 }
             }
         },
@@ -69,12 +75,12 @@ module.exports = function (grunt) {
             devMinScripts: {
                 files: [
                     {
-                        src: 'js/final/external.js',
-                        dest: 'js/final/external.min.js'
+                        src: 'assets/_compiled/js/final/external.js',
+                        dest: 'public/js/external.min.js'
                     },
                     {
-                        src: 'js/final/cota.js',
-                        dest: 'js/final/cota.min.js'
+                        src: 'assets/_compiled/js/final/cota.js',
+                        dest: 'public/js/cota.min.js'
                     }
                 ]
             }
@@ -82,7 +88,7 @@ module.exports = function (grunt) {
 
         watch: {
             scripts: {
-                files: ['coffee/**/*.coffee'],
+                files: ['assets/coffee/**/*.coffee'],
                 tasks: ['scripts-dev'],
                 options: {
                     "spawn": false
@@ -90,7 +96,7 @@ module.exports = function (grunt) {
             },
 
             styles: {
-                files: ['scss/**/*.scss'],
+                files: ['assets/scss/**/*.scss'],
                 tasks: ['styles-dev'],
                 options: {
                     "spawn": false
@@ -101,16 +107,16 @@ module.exports = function (grunt) {
         compass: {
             dev: {
                 options: {
-                    sassDir: 'scss',
-                    cssDir: 'css',
+                    sassDir: 'assets/scss',
+                    cssDir: 'public/css',
                     environment: 'production'
                 }
             },
 
             dist: {
                 options: {
-                    sassDir: 'scss',
-                    cssDir: 'css',
+                    sassDir: 'assets/scss',
+                    cssDir: 'public/css',
                     environment: 'production'
                 }
             }
